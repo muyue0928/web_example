@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>聯課範例成發</title>
+    <style>
+        body{
+            margin: 0px;
+            font-family: 微軟正黑體 新細明體;
+        }
+        .header{
+            background-color: cornflowerblue;
+            display: flex;
+            justify-content: center;
+            padding: 10px 0px;
+        }        
+        .header-left{
+            color: black;
+            font-size: 40px;
+            text-align: center;
+            width: 400px;
+            font-weight: bold;
+        }
+        .header-right{
+            display: flex;
+            font-size: 20px;
+            width: 600px;
+            align-items: center;
+            
+        }
+        .header-left a:active{
+            color: white;
+            text-decoration: none;
+        }
+        .header-left a:visited{
+            color: white;
+            text-decoration: none;
+        }
+        .header-left a:link{
+            color: white;
+            text-decoration: none;
+        }
+        .header-right a:link{
+            color: white;
+            text-decoration: none;
+        }
+        .header-right a:visited{
+            color: white;
+            text-decoration: none;
+        }
+        .header-right a:active{
+            color: white;
+            text-decoration: none;
+        }
+        div a{
+            margin: 0px 10px;
+            align-items: center;
+            font-weight: bold;
+        }
+        .main{
+            display: flex;
+            justify-content: center;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="header-left"><a href="index.html">聯課成發範例</a></div>
+        <div class="header-right">
+            <div><a href="#">Git用法</a></div>
+            <div><a href="ppt.html">簡報整理</a></div>
+            <div><a href="#">網頁學習資源</a></div>
+            <div><a href="lesson.html">第八堂簡報</a></div>
+        </div>
+    </div>
+    <div class="main">
+        <div class="system">
+            <select id="ppt">
+                <option value="1">第一堂</option>
+                <option value="2">第二堂</option>
+                <option value="3">第三堂</option>
+                <option value="4">第四堂</option>
+                <option value="5">第五堂</option>
+                <option value="6">第六堂</option>
+                <option value="7">第七堂</option>
+            </select>
+            <button onclick="btn()">按我查詢</button>
+            <div id="box">
+                第一堂<a href='https://drive.google.com/file/d/1bphStFkvaHB5cICm9LlOGCy1oRnS-T60/view?usp=sharing' target='_blank'>查看</a>
+            </div>
+        </div>
+    </div>
+    <script>
+        
+        let box=document.getElementById("box");
+        let ppt=document.getElementById("ppt");
+        function btn(){
+            switch(ppt.value){
+                case '1':
+                    return box.innerHTML="第一堂<a href='https://drive.google.com/file/d/1bphStFkvaHB5cICm9LlOGCy1oRnS-T60/view?usp=sharing' target='_blank'>查看</a>";
+                case "2":
+                    return box.innerHTML='第二堂<a href="https://docs.google.com/presentation/d/1bxsm_T5lcLy1v-A-hoImpAw04-_CkhcBtDUdQjTRbTc/edit?usp=sharing" target="_blank">查看</a>';
+                case '3':
+                    return box.innerHTML='第三堂<a href="https://docs.google.com/presentation/d/1GoY22b26GDFC_vQz5TxdtlVHZG-Sq6Do9EcV9esluP4/edit?usp=sharing" target="_blank">查看</a>';
+                case '4':
+                    return box.innerHTML='第四堂<a href="https://docs.google.com/presentation/d/1HmkqW5kG7z2lgvTIFr22i2N_PppHvUooTH2LdJD685I/edit?usp=sharing" target="_blank">查看</a>';
+                case '5':
+                    return box.innerHTML='第五堂<a href="https://docs.google.com/presentation/d/11YsnBGOmDbJh71pXRfadxoKtLBsqupYfwyQ81hbL9Xo/edit?usp=sharing" target="_blank">查看</a>';
+                case '6':
+                    return box.innerHTML='第六堂<a href="https://docs.google.com/presentation/d/1nkredcErvb4M9PRM_9Ku9y4SdI0HAwmhLIvmttxo5FI/edit?usp=sharing" target="_blank">查看</a>';
+                case '7':
+                    return box.innerHTML='第七堂<a href="https://docs.google.com/presentation/d/1dBSc63wcPznY0gzRYonuy024nHk_tTkN5K_nTgaRW-I/edit?usp=sharing" target="_blank">查看</a>';
+                default:
+                    return box.innerHTML="ERROR";
+                }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>聯課成發範例</title>
+    <style>
+                body{
+            margin: 0px;
+            font-family: 微軟正黑體 新細明體;
+        }
+        .header{
+            background-color: cornflowerblue;
+            display: flex;
+            justify-content: center;
+            padding: 10px 0px;
+        }
+        .header-left{
+            color: black;
+            font-size: 40px;
+            text-align: center;
+            width: 400px;
+            font-weight: bold;
+        }
+        .header-right{
+            display: flex;
+            font-size: 20px;
+            width: 600px;
+            align-items: center;
+            
+        }
+        .header-left a:active{
+            color: white;
+            text-decoration: none;
+        }
+        .header-left a:visited{
+            color: white;
+            text-decoration: none;
+        }
+        .header-left a:link{
+            color: white;
+            text-decoration: none;
+        }
+        .header-right a:link{
+            color: white;
+            text-decoration: none;
+        }
+        .header-right a:visited{
+            color: white;
+            text-decoration: none;
+        }
+        .header-right a:active{
+            color: white;
+            text-decoration: none;
+        }
+        div a{
+            margin: 0px 10px;
+            align-items: center;
+            font-weight: bold;
+        }
+        .main{
+            display: flex;
+            justify-content: center;
+        }
+        .main-ppt{
+            width: 1000px;
+            height: 500px;
+            border: solid 2px;
+            margin-top: 10px;
+            background-color: rgb(255, 207, 51);
+        }
+    </style>
+</head>
+<body>
+    <div class="header" id="header">
+        <div class="header-left"><a href="index.html">聯課成發範例</a></div>
+        <div class="header-right">
+            <div><a href="#">Git用法</a></div>
+            <div><a href="ppt.html">簡報整理</a></div>
+            <div><a href="#">網頁學習資源</a></div>
+            <div><a href="lesson.html">第八堂簡報</a></div>
+        </div>
+    </div>
+    <div class="main">
+        <div class="main-ppt">
+            <button onclick="back()">上一頁</button>
+            <select id="page">
+                <option disabled>請選擇頁數</option>
+                <option value="1">第一頁</option>
+                <option value="2">第二頁</option>
+                <option value="3">第三頁</option>
+            </select>
+            <button onclick="an()">GO!</button>
+            <button onclick="forward()">下一頁</button>
+            <br>
+            現在頁數：
+            <span id="nowPage"></span>
+            <div id="inner">
+                OMG
+            </div>
+        </div>
+    </div>
+    <script>
+        let inner=document.getElementById("inner");
+        let page=document.getElementById("page");
+        let nowPage=document.getElementById("nowPage");
+        let num=1;
+        change(num);
+        function back(){
+            if(num>1){
+                num--;
+                change();
+            }
+            else{
+                alert("已無法往前，再按阿");
+            }
+        }
+        function forward(){
+            if(num<3){
+                num++;
+                change();
+            }
+            else{
+                alert("已無法往後，不要再按了");
+            }
+        }
+        function an(){
+            num=parseInt(page.value);
+            change();
+        }
+        function change(){
+            nowPage.innerText=num;
+            switch(num){
+                case 1:
+                    return inner.innerHTML='<h1>今天要幹嘛</h1><ol><li>成發驗收</li><li>教Git</li><li>耍廢(x</li></ol>';
+                case 2:
+                    return inner.innerHTML="<h1>成發驗收</h1>";
+                case 3:
+                    return inner.innerHTML="<h1>GIT</h1>";
+                default:
+                    return inner.innerHTML="ERROR";
+            }
+            
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>聯課成發範例</title>
+    <style>
+        body{
+            margin: 0px;
+            font-family: 微軟正黑體 新細明體;
+        }
+        .header{
+            background-color: cornflowerblue;
+            display: flex;
+            justify-content: center;
+            padding: 10px 0px;
+        }
+        .header-left{
+            color: black;
+            font-size: 40px;
+            text-align: center;
+            width: 400px;
+            font-weight: bold;
+        }
+        .header-right{
+            display: flex;
+            font-size: 20px;
+            width: 600px;
+            align-items: center;
+            
+        }
+        .header-left a:active{
+            color: white;
+            text-decoration: none;
+        }
+        .header-left a:visited{
+            color: white;
+            text-decoration: none;
+        }
+        .header-left a:link{
+            color: white;
+            text-decoration: none;
+        }
+        .header-right a:link{
+            color: white;
+            text-decoration: none;
+        }
+        .header-right a:visited{
+            color: white;
+            text-decoration: none;
+        }
+        .header-right a:active{
+            color: white;
+            text-decoration: none;
+        }
+        div a{
+            margin: 0px 10px;
+            align-items: center;
+            font-weight: bold;
+        }
+        .club{
+            display: flex;
+            justify-content: center;
+        }
+        .CKEFGISC{
+            display: flex;
+            justify-content: center;
+        }
+        .footer{
+            background-color: rgba(100, 148, 237, 0.548);
+            display: flex;
+            justify-content: center;
+            height: 100px;
+            align-items: center;
+        }
+        .main{
+            height: 500px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header" id="header">
+        <div class="header-left"><a href="index.html">聯課成發範例</a></div>
+        <div class="header-right">
+            <div><a href="#">Git用法</a></div>
+            <div><a href="ppt.html">簡報整理</a></div>
+            <div><a href="#">網頁學習資源</a></div>
+            <div><a href="lesson.html">第八堂簡報</a></div>
+        </div>
+    </div>
+    <div class="main" id="main">
+        <div class="CKEFGISC">
+            <div class="title">建北電資CKEFGISC</div>
+            <div class="text">
+                其實我這裡想不到要放啥
+            </div>
+        </div>
+        <div class="club">
+            <div class="CKEISC">
+                <div class="title">建中電研CKEISC</div>
+                <div class="text">
+                    這裡也是想不到要放啥
+                </div>
+            </div>
+            <div class="FGISC">
+                <div class="title">北一資研FGISC</div>
+                <div class="text">
+                    這裡還是想不到要放啥
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer" id="footer">
+        <div>CKEFGISC建北電資25th 苜礿、大福共同製作 </div>
+    </div>
+    <script>
+        let main = document.getElementById("main");
+        let header = document.getElementById("header");
+        let footer = document.getElementById("footer");
+        main.style.height=window.innerHeight-footer.style.height-header.style.height-150+'px';
+    </script>
+</body>
+</html>
